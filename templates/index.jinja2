@@ -1,0 +1,8 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+{% if err_str %}
+<h2> {{ err_str }} </h2>
+{% endif %}
+<a href="new_game"><button class="btn">Play New Game!!!</button></a>
+{% endblock %}

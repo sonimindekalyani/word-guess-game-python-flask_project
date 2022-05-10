@@ -1,0 +1,38 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+{% if is_new_game %}
+    <h1>
+    {% for i in game_info['game']['blanks'] +%}
+        {{ " _ " }}
+    {% endfor %}
+    </h1>
+{% else %}
+    {% if err_str %}
+        <p> {{ err_str }} </p>
+     {% endif %}
+        <h1>
+        {% for x in game_info['game']['blanks'] %}
+            {% if not x +%}
+                {{  " _ " }}
+            {% else +%}
+                {{ x }}
+            {% endif %}
+        {% endfor %}
+        </h1>
+{% endif %}
+
+
+<form action="/guess_letter" autocomplete="off">
+<label class="label" for="guess">Guess Letter</label> <br>
+<input class="text" type="text" id="guess" name="guessed_letter" required/><br><br>
+<p>
+Guessed Letters:
+{%+ for x in game_info['game']['guesses'] +%}
+    {{  x.upper()  }}
+{% endfor %}
+</p>>
+<input class= "btn" type="submit" value="Check!!">
+</form>
+
+{% endblock %}

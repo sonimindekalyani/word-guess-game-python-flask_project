@@ -1,0 +1,18 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+{% if won %}
+    <h1 class="blink_result"> Yayy!! You won the game </h1>
+    <p>
+        Tried to guess the word " {{ game_info['game']['word'] }} " <br>
+        You won with
+        {{ game_info['game']['guesses']|length - game_info['game']['incorrect_guesses']|length }}
+        correct guesses <br>
+        and {{ game_info['game']['incorrect_guesses']|length }} incorrect guesses.
+    </p>
+{% else %}
+    <h1 class="blink_result"> Try your luck next time !!</h1>
+    <p> Correct word: {{ game_info['game']['word'] }} </p>
+{% endif %}
+<a href="new_game"><button class="btn">Play New Game!!!</button></a>
+{% endblock %}

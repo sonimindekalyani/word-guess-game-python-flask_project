@@ -1,0 +1,55 @@
+body {
+    background-color:black;
+    text-align:center;
+    font-family: 'Titan One', cursive;
+    color: #F0A500;
+}
+
+h1 {
+    color: #F0A500;
+    font-size: 100px;
+
+}
+
+p {
+    color: #F0A500;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.btn {
+    position:relative;
+    top:100px;
+    padding:40px;
+    width:400px;
+    border-style:bold;
+    border-radius:10px;
+    background-color:#E45826;
+    color:black;
+    font-family: 'Titan One', cursive;
+    font-size:30px;
+}
+
+.label {
+    font-size:50px;
+}
+
+input[type=text] {
+  border: 2px solid #F0A500;
+  border-radius: 4px;
+  font-family:'Titan One', cursive;
+  font-size: 24px;
+  text-align:center;
+  height: 50px;
+  width: 75px
+}
+
+.blink_result {
+  animation: blinker 5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
